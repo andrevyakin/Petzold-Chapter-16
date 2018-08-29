@@ -34,5 +34,31 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+<ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\35FLOPPY.BMP" />
+    <Resource Include="Images\CDDRIVE.BMP" />
+    <Resource Include="Images\CLSDFOLD.BMP" />
+    <Resource Include="Images\DRIVE.bmp" />
+    <Resource Include="Images\OPENFOLD.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DirectoryTreeView.cs" />
+    <Compile Include="DirectoryTreeViewItem.cs" />
+    <Compile Include="ImagedTreeViewItem.cs" />
+    <Compile Include="RecurseDirectoriesIncrementally.cs" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
