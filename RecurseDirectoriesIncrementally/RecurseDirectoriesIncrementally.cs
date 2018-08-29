@@ -25,10 +25,12 @@ namespace Petzold.RecurseDirectoriesIncrementally
             Title = "Recurse Directories Incrementally";
 
             // Create Grid as content of window.
+            // Создайте Grid как содержимое окна.
             Grid grid = new Grid();
             Content = grid;
 
             // Define ColumnDefinition objects.
+            // Определите объекты ColumnDefinition.
             ColumnDefinition coldef = new ColumnDefinition();
             coldef.Width = new GridLength(50, GridUnitType.Star);
             grid.ColumnDefinitions.Add(coldef);
@@ -42,12 +44,14 @@ namespace Petzold.RecurseDirectoriesIncrementally
             grid.ColumnDefinitions.Add(coldef);
 
             // Put DirectoryTreeView at left.
+            // Поместите DirectoryTreeView слева.
             DirectoryTreeView tree = new DirectoryTreeView();
             tree.SelectedItemChanged += TreeViewOnSelectedItemChanged;
             grid.Children.Add(tree);
             Grid.SetColumn(tree, 0);
 
             // Put GridSplitter in center.
+            // Поместите GridSplitter в центр.
             GridSplitter split = new GridSplitter();
             split.Width = 6;
             split.ResizeBehavior = GridResizeBehavior.PreviousAndNext;
@@ -55,6 +59,7 @@ namespace Petzold.RecurseDirectoriesIncrementally
             Grid.SetColumn(split, 1);
 
             // Put scrolled StackPanel at right.
+            // Поместите прокрученный StackPanel справа.
             ScrollViewer scroll = new ScrollViewer();
             grid.Children.Add(scroll);
             Grid.SetColumn(scroll, 2);
@@ -66,12 +71,15 @@ namespace Petzold.RecurseDirectoriesIncrementally
                         RoutedPropertyChangedEventArgs<object> args)
         {
             // Get selected item.
+            // Получить выбранный элемент.
             DirectoryTreeViewItem item = args.NewValue as DirectoryTreeViewItem;
 
             // Clear out the DockPanel.
+            // Снимите DockPanel.
             stack.Children.Clear();
 
             // Fill it up again.
+            // Заполните его снова.
             FileInfo[] infos;
 
             try
