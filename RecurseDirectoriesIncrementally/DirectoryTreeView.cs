@@ -22,6 +22,7 @@ namespace Petzold.RecurseDirectoriesIncrementally
         }
         public void RefreshTree()
         {
+            //     ”казывает, что скоро начнетс€ инициализаци€ объекта System.Windows.Controls.ItemsControl.
             BeginInit();
             Items.Clear();
 
