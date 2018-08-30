@@ -12,12 +12,15 @@ namespace Petzold.RecurseDirectoriesIncrementally
 {
     class RecurseDirectoriesIncrementally : Window
     {
+        //StackPanel располагает все элементы вряд по горизонтали или вертикали
         StackPanel stack;
 
         [STAThread]
         public static void Main()
         {
             Application app = new Application();
+
+            //Создает окно, в котором нижеследующие элементы
             app.Run(new RecurseDirectoriesIncrementally());
         }
         public RecurseDirectoriesIncrementally()
@@ -25,10 +28,12 @@ namespace Petzold.RecurseDirectoriesIncrementally
             Title = "Recurse Directories Incrementally";
 
             // Create Grid as content of window.
+            // Создает Grid
             Grid grid = new Grid();
             Content = grid;
 
             // Define ColumnDefinition objects.
+            // Добавляет три колонки
             ColumnDefinition coldef = new ColumnDefinition();
             coldef.Width = new GridLength(50, GridUnitType.Star);
             grid.ColumnDefinitions.Add(coldef);
@@ -42,12 +47,19 @@ namespace Petzold.RecurseDirectoriesIncrementally
             grid.ColumnDefinitions.Add(coldef);
 
             // Put DirectoryTreeView at left.
+            // Поместите DirectoryTreeView слева.
+            // Вызывает конструктор класса DirectoryTreeView и создает объект tree этого класса
+            // Переходим к класс DirectoryTreeView
             DirectoryTreeView tree = new DirectoryTreeView();
+
+            //Делегат
             tree.SelectedItemChanged += TreeViewOnSelectedItemChanged;
+
             grid.Children.Add(tree);
             Grid.SetColumn(tree, 0);
 
             // Put GridSplitter in center.
+            // Поместите GridSplitter в центр.
             GridSplitter split = new GridSplitter();
             split.Width = 6;
             split.ResizeBehavior = GridResizeBehavior.PreviousAndNext;
@@ -55,6 +67,7 @@ namespace Petzold.RecurseDirectoriesIncrementally
             Grid.SetColumn(split, 1);
 
             // Put scrolled StackPanel at right.
+            // Поместите прокрученный StackPanel справа.
             ScrollViewer scroll = new ScrollViewer();
             grid.Children.Add(scroll);
             Grid.SetColumn(scroll, 2);

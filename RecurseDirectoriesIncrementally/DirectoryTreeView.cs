@@ -14,8 +14,10 @@ namespace Petzold.RecurseDirectoriesIncrementally
     public class DirectoryTreeView : TreeView
     {
         // Constructor builds partial directory tree.
+        // Конструктор создает частичное дерево каталогов.
         public DirectoryTreeView()
         {
+            // запускает функию, см. ниже
             RefreshTree();
         }
         public void RefreshTree()
