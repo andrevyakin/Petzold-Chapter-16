@@ -22,8 +22,9 @@ namespace Petzold.RecurseDirectoriesIncrementally
         }
         public void RefreshTree()
         {
-            //     Указывает, что скоро начнется инициализация объекта System.Windows.Controls.ItemsControl.
+            //Указывает, что скоро начнется инициализация объекта System.Windows.Controls.ItemsControl.
             BeginInit();
+            //Очищает коллекцию и освобождает ссылки на все элементы коллекции
             Items.Clear();
 
             // Obtain the disk drives.
@@ -32,7 +33,12 @@ namespace Petzold.RecurseDirectoriesIncrementally
 
             foreach (DriveInfo drive in drives)
             {
+                // Получает имя диска и переводит его с верхний регистр (Заглавные буквы)
                 char chDrive = drive.Name.ToUpper()[0];
+
+                // Запускает конструктор класса DirectoryTreeViewItem
+                // передает в него текущее имя дикска
+                // Переходим в класс DirectoryTreeViewItem
                 DirectoryTreeViewItem item = 
                             new DirectoryTreeViewItem(drive.RootDirectory);
 

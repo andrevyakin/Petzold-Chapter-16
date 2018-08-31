@@ -16,15 +16,19 @@ namespace Petzold.RecurseDirectoriesIncrementally
         DirectoryInfo dir;
 
         // Constructor requires DirectoryInfo object.
-        //Для конструктора требуется объект DirectoryInfo.
+        // Для конструктора требуется объект DirectoryInfo.
+        // В конструктор передаем DirectoryInfo dir- содержит имя (полный путь) к текущему диску
+        // который передан классом DirectoryTreeView dir
         public DirectoryTreeViewItem(DirectoryInfo dir)
         {
             this.dir = dir;
             Text = dir.Name;
 
+            // Переменная с изображением открытой папки
             SelectedImage = new BitmapImage(
                 new Uri("pack://application:,,/Images/OPENFOLD.BMP"));
 
+            // Переменная с изображением закртой папки
             UnselectedImage = new BitmapImage(
                 new Uri("pack://application:,,/Images/CLSDFOLD.BMP"));
         }
@@ -34,6 +38,7 @@ namespace Petzold.RecurseDirectoriesIncrementally
         {
             get { return dir; }
         }
+
         // Public method to populate with items.
         //Открытый метод для заполнения элементами.
         public void Populate()

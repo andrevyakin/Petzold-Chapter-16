@@ -28,20 +28,14 @@ namespace Petzold.RecurseDirectoriesIncrementally
             Title = "Recurse Directories Incrementally";
 
             // Create Grid as content of window.
-<<<<<<< HEAD
-            // Создает Grid
-=======
+
             // Создайте Grid как содержимое окна.
->>>>>>> f62da1d5c131ec41f4c7ba6403173999cfcd7661
             Grid grid = new Grid();
             Content = grid;
 
             // Define ColumnDefinition objects.
-<<<<<<< HEAD
+
             // Добавляет три колонки
-=======
-            // Определите объекты ColumnDefinition.
->>>>>>> f62da1d5c131ec41f4c7ba6403173999cfcd7661
             ColumnDefinition coldef = new ColumnDefinition();
             coldef.Width = new GridLength(50, GridUnitType.Star);
             grid.ColumnDefinitions.Add(coldef);
@@ -56,11 +50,9 @@ namespace Petzold.RecurseDirectoriesIncrementally
 
             // Put DirectoryTreeView at left.
             // Поместите DirectoryTreeView слева.
-<<<<<<< HEAD
             // Вызывает конструктор класса DirectoryTreeView и создает объект tree этого класса
             // Переходим к класс DirectoryTreeView
-=======
->>>>>>> f62da1d5c131ec41f4c7ba6403173999cfcd7661
+
             DirectoryTreeView tree = new DirectoryTreeView();
 
             //Делегат
